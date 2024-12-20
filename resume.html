@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Vijay Ganesh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Resume</h1>
+        <div class="resume-actions">
+            <button onclick="viewResume()">View Resume</button>
+            <button onclick="downloadResume()">Download Resume</button>
+        </div>
+        <div class="resume-content">
+            <iframe src="resume.pdf" width="100%" height="600px" style="border:none;"></iframe>
+        </div>
+    </main>
+
+    <script>
+        function viewResume() {
+            const resumeWindow = window.open("", "Resume", "width=800,height=600");
+            const iframe = document.createElement("iframe");
+            iframe.src = "resume.pdf";
+            iframe.width = "100%";
+            iframe.height = "100%";
+            iframe.style.border = "none";
+            if (resumeWindow) {
+                resumeWindow.document.body.appendChild(iframe);
+            }
+        }
+
+        function downloadResume() {
+            window.location.href = "resume.pdf";
+        }
+    </script>
+</body>
+</html>
